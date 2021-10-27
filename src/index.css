@@ -1,13 +1,22 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.google.com/specimen/Montserrat");
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  width: 100%;
+  font-family: "Monstserrat", cursive;
+  background-color: #f7f7ff;
+  background-image: url(./images/bg-bottom.svg), url(./images/bg-top.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom left, right top;
+  background-size: 30rem, 25rem;
+  padding-bottom: 30rem;
+}
+.theHolder h1,
+.theHolder h3,
+.theHolder p {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+  margin-bottom: 1rem;
+  padding-bottom: 10px;
 }
