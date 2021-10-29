@@ -6,7 +6,8 @@ function App() {
     {
       id: 0,
       name: "Basic",
-      price: "$19.99",
+      monthlyPrice: "$19.99",
+      yearlyPrice: "$199.99",
       storage: "500 GB Storage",
       userAllowed: "2 Users Allowed", 
       transferable: "Send up to 3 GB"
@@ -14,7 +15,8 @@ function App() {
     {
       id: 1,
       name: "Professional",
-      price: "$24.99",
+      monthlyPrice: "$24.99",
+      yearlyPrice: "249.99",
       storage: "1 TB Storage",
       userAllowed: "5 Users Allowed", 
       transferable: "Send up to 10 GB"
@@ -22,7 +24,8 @@ function App() {
     {
       id: 2,
       name: "Master",
-      price: "$39.99",
+      monthlyPrice: "$39.99",
+      yearlyPrice: '399.99',
       storage: "2 TB Storage",
       userAllowed: "10 Users Allowed", 
       transferable: "Send up to 20 GB"
@@ -36,8 +39,9 @@ function App() {
       <h1 className='text-gray-800 text-4xl text-center mt-8'>Our Pricing</h1>
       <div className='w-80 flex justify-between mx-auto mt-4 items-center'>
         <span className=''>Annually</span>
-        <span onClick={() => setToggle(() => toggle === false ? true : false)} className={`${toggle ? 'justify-end': 'justify-start' } toggle w-10 h-6 rounded-full 
-        justify-start
+        <span 
+        onClick={() => setToggle(() => toggle === false ? true : false)} 
+        className={`${toggle ? 'justify-end': 'justify-start'} bg-primary toggle w-10 h-6 rounded-full 
         border-2 flex  items-center`}></span>
         <span>Monthly</span>
       </div>
@@ -46,11 +50,13 @@ function App() {
         {pricingContentMonthly.map((priceContent,index)=> 
           <div key={`c${index}`} className={`theHoverChange w-80 mx-1 bg-white rounded-md px-8 py-12 text-center shadow-md text-xs transition-all`}>
             <h3 className='border-b-0 text-sm'>{priceContent.name}</h3>
-            <h1 className='text-5xl py-4 border-b'>{priceContent.price}</h1>
+            <h1 className='text-5xl py-4 border-b'>{toggle ?priceContent.monthlyPrice : priceContent.yearlyPrice}</h1>
             <p>{priceContent.storage}</p>
             <p>{priceContent.userAllowed}</p>
             <p>{priceContent.transferable}</p>
-            <button className='w-64 border-2 border-solid border-gray-400 my-8 px-4 py-2 rounded text-primary text-xs text-bold '>LEARN MORE</button>
+            <button className={`w-64 border-2 border-solid my-8 px-4 py-2 rounded text-xs text-bold `}>
+              LEARN MORE
+            </button>
           </div>
         )}
 

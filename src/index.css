@@ -49,10 +49,7 @@ body {
 .theHoverChange:hover h3 {
   opacity: 1;
 }
-.theHoverChange:hover button {
-  border: 1px solid white;
-  color: white;
-}
+
 .toggle::before {
   content: "";
   width: 1.2rem;
@@ -62,3 +59,14 @@ body {
   background-color: white;
   margin: 0 0.19rem 0 0;
 }
+button {
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: white;
+}
+.theHoverChange:hover button {
+  background: white;
+  color: #8e92e9;
+}
+/* .toggle {
+  background-color: indigo;
+} */
